@@ -1,15 +1,15 @@
 #include "vofa.h"
-#include <stdio.h>  // ÓÃÓÚ sprintf
-#include <string.h> // ÓÃÓÚ strlen
+#include <stdio.h>  // ç”¨äº sprintf
+#include <string.h> // ç”¨äº strlen
 
 
-static UART_HandleTypeDef* vofa_huart = NULL;//½ÓÊÕ´®¿Ú¾ä±ú
-static uint8_t vofa_tx_buffer[100]; // ·¢ËÍ»º³åÇø 100×Ö½Ú
+static UART_HandleTypeDef* vofa_huart = NULL;//æ¥æ”¶ä¸²å£å¥æŸ„
+static uint8_t vofa_tx_buffer[100]; // å‘é€ç¼“å†²åŒº 100å­—èŠ‚
 
 /**
- * @brief ³õÊ¼»¯
- * @param USART_HandleTypeDef* huart: Ö¸ÏòUSART¾ä±úµÄÖ¸Õë
- * @return ³É¹¦·µ»Ø0£¬Ê§°Ü·µ»Ø·Ç0Öµ
+ * @brief åˆå§‹åŒ–
+ * @param USART_HandleTypeDef* huart: æŒ‡å‘USARTå¥æŸ„çš„æŒ‡é’ˆ
+ * @return æˆåŠŸè¿”å›0ï¼Œå¤±è´¥è¿”å›é0å€¼
  */
 void VOFA_Init(UART_HandleTypeDef* huart)
 {
@@ -17,9 +17,9 @@ void VOFA_Init(UART_HandleTypeDef* huart)
 }
 
 /**
- *  @brief ·¢ËÍÊı¾İ
- *  @param  data: Ö¸ÏòÒª·¢ËÍµÄÊı¾İÊı×éµÄÖ¸Õë
- *  @param  count: Òª·¢ËÍµÄÊı¾İÊıÁ¿
+ *  @brief å‘é€æ•°æ®
+ *  @param  data: æŒ‡å‘è¦å‘é€çš„æ•°æ®æ•°ç»„çš„æŒ‡é’ˆ
+ *  @param  count: è¦å‘é€çš„æ•°æ®æ•°é‡
  */ 
 void VOFA_SendData(float*data,uint8_t count)
 {
@@ -30,10 +30,10 @@ void VOFA_SendData(float*data,uint8_t count)
     int current_position=0;
     for(int i=0;i<count;i++)
     {
-        //snprintfÓÃÀ´·ÀÖ¹»º³åÇøÒç³ö
+        //snprintfç”¨æ¥é˜²æ­¢ç¼“å†²åŒºæº¢å‡º
         //int chars_written=snprintf((char*)vofa_tx_buffer+current_position,sizeof(vofa_tx_buffer-current_position),"%.2f,",data[i]);
 				int chars_written=snprintf((char*)vofa_tx_buffer+current_position,sizeof(vofa_tx_buffer),"%.2f,",data[i]);
-        //ÅĞ¶ÏÊÇ·ñĞ´Èë³É¹¦
+        //åˆ¤æ–­æ˜¯å¦å†™å…¥æˆåŠŸ
         if(chars_written>0)
         {
             current_position+=chars_written;

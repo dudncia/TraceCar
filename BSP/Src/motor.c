@@ -17,7 +17,7 @@ void Motor_Init(Motor_t* motor, TIM_HandleTypeDef* encoder_tim, TIM_HandleTypeDe
     motor->total_pulses_count=0;
     motor->speed_rpm = 0.0f;
     
-    motor->pulses_per_revolution = 960.0f; // 12(线) * 4(倍频) * 20(减速比),电机输出轴旋转一圈单片机测得的总脉冲数
+    motor->pulses_per_revolution = 1040.0f; // 13(线) * 4(倍频) * 20(减速比),电机输出轴旋转一圈单片机测得的总脉冲数
     motor->sample_time_ms = 10;          // 测速周期10ms
     
     // 启动定时器的编码器模式

@@ -9,7 +9,7 @@ typedef struct
     TIM_HandleTypeDef*  pwm_tim;                // PWM输出对应的定时器句柄指针
 
     int32_t             last_count;             // 上一次的编码器计数值
-    float               speed_rpm;              // 电机转速 (RPM)
+    float               speed_rpm;              // 电机转�2�� (RPM)
     
     float               pulses_per_revolution;  // 输出轴转一圈的总脉冲数
     int32_t             total_pulses_count;      // 输出轴从开始到目前为止的总脉冲数

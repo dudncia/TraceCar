@@ -34,10 +34,10 @@ void Controller_Init(void)
     PID_Init(&B_position_pid, 0.05f, 0.0f, 0.03f, 320.0f, -320.0f);
     //偏移位置环
     //参数只有kp
-    PID_Init(&gray_position_pid, 50.0f, 0.0f, 0.0f, 320.0f, -320.0f);
+    PID_Init(&gray_position_pid, 39.0f, 0.0f, 0.0f, 320.0f, -320.0f);
     //速度环
-    PID_Init(&A_speed_pid, 8.5f, 0.75f, 0.012f, 1000.0f, -1000.0f);
-    PID_Init(&B_speed_pid, 8.5f, 0.75f, 0.012f, 1000.0f, -1000.0f);
+    PID_Init(&A_speed_pid, 5.35f, 0.89f, 0.011f, 1000.0f, -1000.0f);
+    PID_Init(&B_speed_pid, 5.35f, 0.89f, 0.011f, 1000.0f, -1000.0f);
 }
 
 
@@ -74,8 +74,8 @@ void pos_Controller_Update_Callback(void)
 }
 
 
-//关心偏转量和速度（外部传参basespeed可由pos_Controller_Update_Callback（）设定，
-                  //从而实现电机基本速度的可调节）
+/*关心偏转量和速度（外部传参basespeed可由pos_Controller_Update_Callback（）设定，
+                  从而实现电机基本速度的可调节）*/
 void gray_Controller_Update_Callback(float base_speed,float gray_error)
 {
     //更新转向量
@@ -89,13 +89,13 @@ void gray_Controller_Update_Callback(float base_speed,float gray_error)
     A_speed_pid.current_value=A_left_motor.speed_rpm;
     B_speed_pid.current_value=B_right_motor.speed_rpm;  
     //记录轮子转过的距离方便最后停车
-    A_position_pid.current_value=A_left_motor.total_pulses_count;    
+    //A_position_pid.current_value=A_left_motor.total_pulses_count;    
     //B_position_pid.current_value=B_right_motor.total_pulses_count;
 
     
     //设定目标速度
-    A_speed_pid.target  = base_speed + steer;// 左轮
-    B_speed_pid.target = base_speed - steer; // 右轮
+    A_speed_pid.target = base_speed - steer; // 左轮
+    B_speed_pid.target = base_speed + steer; // 右轮
 
     //滤波参数设定
     A_speed_pid.filtered_value=filter_a*A_speed_pid.filtered_value+(1-filter_a)*A_speed_pid.current_value;

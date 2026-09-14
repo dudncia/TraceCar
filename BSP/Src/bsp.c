@@ -23,5 +23,6 @@ void BSP_Init(void)
     //初始化传感器
     Gray_Init(&huart2);
     
+    //初始化串口
     VOFA_Init(&huart1);
 }

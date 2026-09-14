@@ -68,7 +68,7 @@ uint8_t Controller_ready=0;
 float filtered_speed=0.0f;
 const float a=0.8;
 //基础速度
-float BaseSpeed=200.0f;
+float BaseSpeed=60.0f;
 float pos_error=0.0f;//传感器偏差
 /*  实例  */
 PID_t A_speed_pid;
@@ -121,22 +121,29 @@ int main(void)
     BSP_Init();
     HAL_TIM_Base_Start_IT(&htim1);
     Controller_Init();
-    Gray_SendConfig(1,0);//设置为接收模拟量
-    //uint8_t ReviceAnalog = 1;//接受模拟量的标志位 ==1为模拟量，==0为数字量
+    //Gray_SendConfig(1,0);//设置为接收模拟量
+    Gray_SendConfig(0,1);//设置为接收数字量
+    
+    //上电延时，等待灰度传感器初始化 20s
+    HAL_Delay(20*1000);
+    
+    //pwm软启动，防止开始速度过快（调试时应该使用，比赛可以考虑不用）
+    
+    
+    
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+    /*这个if判断里的东西有点多可以封装成函数*/
     
-    //计算pid并输出pwm  
     if(Controller_ready==1){
         Controller_ready=0;
-        gray_Controller_Update_Callback(BaseSpeed,pos_error);
         
-    //判断小车是否运行到临界位置 依旧每10ms判断一次
-    //可以封装成函数
+        //判断小车是否运行到临界位置 依旧每10ms判断一次
+        //可以封装成函数
         if(Motor_GetPosition_m(&A_left_motor)>MaxDistance){
             if(Gray_GetAnalog(0)>Purple_min&&Gray_GetAnalog(0)<Purple_max){//左边的传感器进入终点区域
                 static uint8_t begin=0;
@@ -147,11 +154,58 @@ int main(void)
                 SetBaseSpeed();
             }
         }
+        
+        //计算pid并输出pwm ，每10ms触发一次
+        gray_Controller_Update_Callback(BaseSpeed,pos_error);
+        
+        //临时测试：只读编码器计数，不驱动电机（手转轮子看 total 用）
+//        Motor_Update_Speed(&A_left_motor);
+//        Motor_Update_Speed(&B_right_motor);
+        
+        //每50ms发送数据
+        static int send_sount=0;
+        if(++send_sount>=5)
+        {
+            send_sount=0;
+            
+            /*以下代码可按需注释掉不需要的部分*/
+            
+//            //发送传感器偏移量
+//            float data_to_send_gray[]={
+//                                    gray_position_pid.target,//偏移量的目标值
+//                                    gray_position_pid.current_value//偏移量的当前值
+//            };
+//            VOFA_SendData(data_to_send_gray,2);
+            
+            
+//            //发送 A left 左轮速度
+            float data_to_send_speedA[]={
+                                    A_speed_pid.target,
+                                    A_speed_pid.current_value
+            };
+            VOFA_SendData(data_to_send_speedA,2);
+
+            
+//            //发送 B right 右轮速度
+            float data_to_send_speedB[]={
+                                    B_speed_pid.target,
+                                    B_speed_pid.current_value
+            };
+            VOFA_SendData(data_to_send_speedB,2);        
+            
+             //发送传感器数据
+             //VOFA_SendData((float*)gray_analog,8);  
+                //HAL_UART_Transmit(&huart1,(const uint8_t*)gray_digital,8,100);
+                //VOFA_SendData(&pos_error,1);
+            
+        }
     }
+        
     
     //计算偏移量
     if(gray_updated==1){
-    pos_error=Gray_CalcLineErrorAnalog();
+    //pos_error=Gray_CalcLineErrorAnalog();
+    pos_error=Gray_CalcLineError();    
     gray_updated=0;    
     }
 

@@ -1,7 +1,7 @@
 Dependencies for Project 'TraeCar', Target 'TraeCar': (DO NOT MODIFY !)
 CompilerVersion: 5060528::V5.06 update 5 (build 528)::ARMCC
-F (startup_stm32f103xb.s)(0x6AA0F8FF)(--cpu Cortex-M3 -g --apcs=interwork -I.\RTE\_TraeCar-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include--pd "__UVISION_VERSION SETA 543" --pd "STM32F10X_MD SETA 1" --pd "_RTE_ SETA 1"--list startup_stm32f103xb.lst --xref -o traecar\startup_stm32f103xb.o --depend traecar\startup_stm32f103xb.d)
-F (../Src/main.c)(0x6AA0FA2D)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../BSP/Inc-I.\RTE\_TraeCar-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="543" -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o traecar\main.o --omf_browse traecar\main.crf --depend traecar\main.d)
+F (startup_stm32f103xb.s)(0x6AA51F54)(--cpu Cortex-M3 -g --apcs=interwork -I.\RTE\_TraeCar-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include--pd "__UVISION_VERSION SETA 543" --pd "STM32F10X_MD SETA 1" --pd "_RTE_ SETA 1"--list startup_stm32f103xb.lst --xref -o traecar\startup_stm32f103xb.o --depend traecar\startup_stm32f103xb.d)
+F (../Src/main.c)(0x6AA7B6B2)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../BSP/Inc-I.\RTE\_TraeCar-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="543" -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o traecar\main.o --omf_browse traecar\main.crf --depend traecar\main.d)
 I (../Inc/main.h)(0x6AA0B740)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6A6DA6B6)
 I (../Inc/stm32f1xx_hal_conf.h)(0x6A9FA60F)
@@ -36,11 +36,11 @@ I (../Inc/adc.h)(0x6A9E6E59)
 I (../Inc/tim.h)(0x6A9E73D1)
 I (../Inc/usart.h)(0x6A9FA60F)
 I (../Inc/gpio.h)(0x6A9E6E58)
-I (../BSP/Inc/motor.h)(0x6AA0B126)
+I (../BSP/Inc/motor.h)(0x6AA4EC5A)
 I (../BSP/Inc/pid.h)(0x6A9FFBD5)
 I (../BSP/Inc/bsp.h)(0x6A9FCFDD)
 I (../BSP/Inc/vofa.h)(0x6A8BA9F3)
-I (../BSP/Inc/gray.h)(0x6A9FD48D)
+I (../BSP/Inc/gray.h)(0x6AA7762D)
 I (../BSP/Inc/controller.h)(0x6AA0F055)
 F (../Src/gpio.c)(0x6A9E6E58)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../BSP/Inc-I.\RTE\_TraeCar-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="543" -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o traecar\gpio.o --omf_browse traecar\gpio.crf --depend traecar\gpio.d)
 I (../Inc/gpio.h)(0x6A9E6E58)
@@ -106,7 +106,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6A6DA6B6)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x6A6DA6B6)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6A6DA6B6)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6A6DA6B6)
-F (../Src/tim.c)(0x6A9E740E)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../BSP/Inc-I.\RTE\_TraeCar-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="543" -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o traecar\tim.o --omf_browse traecar\tim.crf --depend traecar\tim.d)
+F (../Src/tim.c)(0x6AA51F53)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../BSP/Inc-I.\RTE\_TraeCar-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="543" -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o traecar\tim.o --omf_browse traecar\tim.crf --depend traecar\tim.d)
 I (../Inc/tim.h)(0x6A9E73D1)
 I (../Inc/main.h)(0x6AA0B740)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6A6DA6B6)
@@ -743,7 +743,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6A6DA6B6)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x6A6DA6B6)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6A6DA6B6)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6A6DA6B6)
-F (..\BSP\Src\bsp.c)(0x6AA0F8AF)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../BSP/Inc-I.\RTE\_TraeCar-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="543" -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o traecar\bsp.o --omf_browse traecar\bsp.crf --depend traecar\bsp.d)
+F (..\BSP\Src\bsp.c)(0x6AA14860)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../BSP/Inc-I.\RTE\_TraeCar-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="543" -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o traecar\bsp.o --omf_browse traecar\bsp.crf --depend traecar\bsp.d)
 I (../BSP/Inc/bsp.h)(0x6A9FCFDD)
 I (../Inc/main.h)(0x6AA0B740)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6A6DA6B6)
@@ -776,10 +776,10 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x6A6DA6B6)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6A6DA6B6)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6A6DA6B6)
 I (../BSP/Inc/vofa.h)(0x6A8BA9F3)
-I (../BSP/Inc/motor.h)(0x6AA0B126)
+I (../BSP/Inc/motor.h)(0x6AA4EC5A)
 I (../BSP/Inc/pid.h)(0x6A9FFBD5)
-I (../BSP/Inc/gray.h)(0x6A9FD48D)
-F (..\BSP\Src\controller.c)(0x6AA0FC69)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../BSP/Inc-I.\RTE\_TraeCar-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="543" -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o traecar\controller.o --omf_browse traecar\controller.crf --depend traecar\controller.d)
+I (../BSP/Inc/gray.h)(0x6AA7762D)
+F (..\BSP\Src\controller.c)(0x6AA7B400)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../BSP/Inc-I.\RTE\_TraeCar-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="543" -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o traecar\controller.o --omf_browse traecar\controller.crf --depend traecar\controller.d)
 I (../BSP/Inc/controller.h)(0x6AA0F055)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6A6DA6B6)
 I (../Inc/stm32f1xx_hal_conf.h)(0x6A9FA60F)
@@ -810,13 +810,13 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6A6DA6B6)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x6A6DA6B6)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6A6DA6B6)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6A6DA6B6)
-I (../BSP/Inc/motor.h)(0x6AA0B126)
+I (../BSP/Inc/motor.h)(0x6AA4EC5A)
 I (../Inc/main.h)(0x6AA0B740)
 I (../BSP/Inc/pid.h)(0x6A9FFBD5)
 I (../BSP/Inc/vofa.h)(0x6A8BA9F3)
-I (../BSP/Inc/gray.h)(0x6A9FD48D)
-F (..\BSP\Src\motor.c)(0x6AA0F379)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../BSP/Inc-I.\RTE\_TraeCar-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="543" -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o traecar\motor.o --omf_browse traecar\motor.crf --depend traecar\motor.d)
-I (../BSP/Inc/motor.h)(0x6AA0B126)
+I (../BSP/Inc/gray.h)(0x6AA7762D)
+F (..\BSP\Src\motor.c)(0x6AA4FD87)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../BSP/Inc-I.\RTE\_TraeCar-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="543" -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o traecar\motor.o --omf_browse traecar\motor.crf --depend traecar\motor.d)
+I (../BSP/Inc/motor.h)(0x6AA4EC5A)
 I (../Inc/main.h)(0x6AA0B740)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6A6DA6B6)
 I (../Inc/stm32f1xx_hal_conf.h)(0x6A9FA60F)
@@ -851,7 +851,7 @@ I (D:\Keil5\ARM\ARMCC\include\stdlib.h)(0x588B8344)
 I (D:\Keil5\ARM\ARMCC\include\math.h)(0x588B8344)
 F (..\BSP\Src\pid.c)(0x6AA0FC01)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../BSP/Inc-I.\RTE\_TraeCar-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="543" -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o traecar\pid.o --omf_browse traecar\pid.crf --depend traecar\pid.d)
 I (../BSP/Inc/pid.h)(0x6A9FFBD5)
-F (..\BSP\Src\vofa.c)(0x6A8BA9F3)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../BSP/Inc-I.\RTE\_TraeCar-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="543" -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o traecar\vofa.o --omf_browse traecar\vofa.crf --depend traecar\vofa.d)
+F (..\BSP\Src\vofa.c)(0x6AA142BD)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../BSP/Inc-I.\RTE\_TraeCar-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="543" -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o traecar\vofa.o --omf_browse traecar\vofa.crf --depend traecar\vofa.d)
 I (../BSP/Inc/vofa.h)(0x6A8BA9F3)
 I (../Inc/main.h)(0x6AA0B740)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6A6DA6B6)
@@ -886,7 +886,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6A6DA6B6)
 I (D:\Keil5\ARM\ARMCC\include\stdio.h)(0x588B8344)
 I (D:\Keil5\ARM\ARMCC\include\string.h)(0x588B8344)
 F (..\BSP\Src\gray.c)(0x6A9FD48D)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../BSP/Inc-I.\RTE\_TraeCar-ID:\Keil5\ARM\PACK\ARM\CMSIS\5.0.1\CMSIS\Include-ID:\Keil5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include-D__UVISION_VERSION="543" -DSTM32F10X_MD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xB-o traecar\gray.o --omf_browse traecar\gray.crf --depend traecar\gray.d)
-I (../BSP/Inc/gray.h)(0x6A9FD48D)
+I (../BSP/Inc/gray.h)(0x6AA7762D)
 I (../Inc/main.h)(0x6AA0B740)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6A6DA6B6)
 I (../Inc/stm32f1xx_hal_conf.h)(0x6A9FA60F)
